@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<UserSecretsId>dotnet-ECommerceBackendSystem.OrderProcessingWorker-d98b2963-a164-43bd-9373-0a67a65872f6</UserSecretsId>
+		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+		<DockerfileContext>..\..</DockerfileContext>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="MassTransit" Version="8.4.1" />
+		<PackageReference Include="MassTransit.RabbitMQ" Version="8.4.1" />
+		<PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.5" />
+		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.22.1-Preview.1" />
+		<PackageReference Include="Serilog.AspNetCore" Version="9.0.0" />
+		<PackageReference Include="Serilog.Sinks.Console" Version="6.0.0" />
+		<PackageReference Include="Serilog.Sinks.File" Version="7.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\Application\ECommerceBackendSystem.Application.Abstractions\ECommerceBackendSystem.Application.Abstractions.csproj" />
+	  <ProjectReference Include="..\..\Infrastructure\ECommerceBackendSystem.Infrastructure\ECommerceBackendSystem.Infrastructure.csproj" />
+	</ItemGroup>
+</Project>

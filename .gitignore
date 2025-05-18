@@ -53,3 +53,5 @@ CodeCoverage/
 TestResult.xml
 nunit-*.xml
 /.vs
+/src/ECommerceBackendSystem/.vs/ECommerceBackendSystem
+/src/ECommerceBackendSystem/.vs/ProjectEvaluation
