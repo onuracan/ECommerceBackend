@@ -1,4 +1,4 @@
-# OrderSystem
+# ECommerceBackend
 
 1- Redis ve RabbitMq uygulamalarının kurulması gerekmektedir.
    - docker-compose.yml dosyası "docker-compose up -d" komutu çalıştırılarak docker uygulaması üzerinden image ve container'lar oluşturulmalı.
