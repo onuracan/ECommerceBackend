@@ -1,0 +1,133 @@
+{
+	"info": {
+		"_postman_id": "07c04117-3cb4-4f02-bfc0-62ffb34e3658",
+		"name": "E-CommerceBackendSystem",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Token Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7192/token/75ef0f22-6d61-49c9-89d4-7922908ca123",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7192",
+					"path": [
+						"token",
+						"75ef0f22-6d61-49c9-89d4-7922908ca123"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Validate Token Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7192/token/validate/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiI3NWVmMGYyMi02ZDYxLTQ5YzktODlkNC03OTIyOTA4Y2ExMjMiLCJuYmYiOjE3NDc1NTU4MjgsImV4cCI6MTc0NzY0MjIyOCwiaWF0IjoxNzQ3NTU1ODI4LCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MTkyIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzE5MiJ9.GGOlTIByDlHpyRP_ieuMW9OmdNCUSfO-w2-dfKJKUAg",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7192",
+					"path": [
+						"token",
+						"validate",
+						"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiI3NWVmMGYyMi02ZDYxLTQ5YzktODlkNC03OTIyOTA4Y2ExMjMiLCJuYmYiOjE3NDc1NTU4MjgsImV4cCI6MTc0NzY0MjIyOCwiaWF0IjoxNzQ3NTU1ODI4LCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MTkyIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzE5MiJ9.GGOlTIByDlHpyRP_ieuMW9OmdNCUSfO-w2-dfKJKUAg"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetOrders Request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiI3NWVmMGYyMi02ZDYxLTQ5YzktODlkNC03OTIyOTA4Y2ExMjMiLCJuYmYiOjE3NDc1NTU5MjksImV4cCI6MTc0NzY0MjMyOSwiaWF0IjoxNzQ3NTU1OTI5LCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MTkyIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzE5MiJ9.UCTGMOl4oTAsJzkFdvGeblPimpFuApOtrBAQHzF39Ms",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer ",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://localhost:7192/orders/75ef0f22-6d61-49c9-89d4-7922908ca123",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7192",
+					"path": [
+						"orders",
+						"75ef0f22-6d61-49c9-89d4-7922908ca123"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateOrder Request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiI3NWVmMGYyMi02ZDYxLTQ5YzktODlkNC03OTIyOTA4Y2ExMjMiLCJuYmYiOjE3NDc1NTYzNDQsImV4cCI6MTc0NzY0Mjc0NCwiaWF0IjoxNzQ3NTU2MzQ0LCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MTkyIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzE5MiJ9.8Ez4N_0F3VdRz-IWpjqc-0Phq0m7idsgrMr1bnr5uNk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiI3NWVmMGYyMi02ZDYxLTQ5YzktODlkNC03OTIyOTA4Y2ExMjMiLCJuYmYiOjE3NDc1NTU5MjksImV4cCI6MTc0NzY0MjMyOSwiaWF0IjoxNzQ3NTU1OTI5LCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MTkyIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzE5MiJ9.UCTGMOl4oTAsJzkFdvGeblPimpFuApOtrBAQHzF39Ms",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": \"75ef0f22-6d61-49c9-89d4-7922908ca123\",\r\n  \"productId\": \"75ef0f22-6d61-49c9-89d4-7922908ca124\",\r\n  \"quantity\": 10,\r\n  \"paymentMethod\": \"CreditCard\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7192/orders/create",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7192",
+					"path": [
+						"orders",
+						"create"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
