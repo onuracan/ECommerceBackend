@@ -15,9 +15,9 @@ namespace ECommerceBackendSystem.API.Controllers
         private readonly ITokenService _tokenService = tokenService;
 
         /// <summary>
-        /// Kullanýcýya JWT token üretir.
+        /// KullanÄ±cÄ±ya JWT token Ã¼retir.
         /// </summary>
-        /// <param name="request">Kullanýcý ID'si</param>
+        /// <param name="request">KullanÄ±cÄ± ID'si</param>
         [HttpGet("{userId}")]
         [ProducesResponseType(typeof(string), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ServiceResponse), StatusCodes.Status400BadRequest)]
@@ -33,9 +33,9 @@ namespace ECommerceBackendSystem.API.Controllers
         }
 
         /// <summary>
-        /// Kullanýcýnýn JWT token'ýnýný doðrular.
+        /// KullanÄ±cÄ±nÄ±n JWT token'Ä±nÄ±nÄ± doÄŸrular.
         /// </summary>
-        /// <param name="request">Kullanýcý token'ý</param>
+        /// <param name="request">KullanÄ±cÄ± token'Ä±</param>
         [HttpGet("validate/{token}")]
         [ProducesResponseType(typeof(bool), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ServiceResponse), StatusCodes.Status401Unauthorized)]

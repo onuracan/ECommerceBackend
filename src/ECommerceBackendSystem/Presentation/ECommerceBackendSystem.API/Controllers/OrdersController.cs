@@ -21,9 +21,9 @@ namespace ECommerceBackendSystem.API.Controllers
 
 
         /// <summary>
-        /// Kullanýcýya ait sipariþleri getirir.
+        /// KullanÄ±cÄ±ya ait sipariÅŸleri getirir.
         /// </summary>
-        /// <param name="request">Kullanýcý ID'si</param>
+        /// <param name="request">KullanÄ±cÄ± ID'si</param>
         [HttpGet("{userId}")]
         [ProducesResponseType(typeof(ServiceResponse<IEnumerable<OrderDto>>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ServiceResponse), StatusCodes.Status400BadRequest)]
@@ -39,7 +39,7 @@ namespace ECommerceBackendSystem.API.Controllers
         }
 
         /// <summary>
-        /// Yeni sipariþ oluþturur.
+        /// Yeni sipariÅŸ oluÅŸturur.
         /// </summary>
         /// <param name="request"></param>
         [HttpPost("create")]
