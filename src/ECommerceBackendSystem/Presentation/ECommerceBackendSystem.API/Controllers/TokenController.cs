@@ -1,4 +1,4 @@
-using ECommerceBackendSystem.API.Models.Tokens;
+using ECommerceBackendSystem.API.Filters;
 using ECommerceBackendSystem.Application.Abstractions.Dtos.ServiceResponse;
 using ECommerceBackendSystem.Application.Abstractions.Services.TokenService;
 using Microsoft.AspNetCore.Authorization;
@@ -17,14 +17,15 @@ namespace ECommerceBackendSystem.API.Controllers
         /// <summary>
         /// Kullanıcıya JWT token üretir.
         /// </summary>
-        /// <param name="request">Kullanıcı ID'si</param>
+        /// <param name="userId">Kullanıcı Id'si</param>
         [HttpGet("{userId}")]
+        [ValidateGuid("userId")]
         [ProducesResponseType(typeof(string), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ServiceResponse), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ServiceResponse), StatusCodes.Status500InternalServerError)]
-        public IActionResult BuidToken([FromRoute] GetTokenRequest request)
+        public IActionResult BuidToken([FromRoute] string userId)
         {
-            var response = this._tokenService.BuildToken(request.UserId);
+            var response = this._tokenService.BuildToken(userId);
 
             if (!response.IsSuccessful)
                 return BadRequest(response);
@@ -35,14 +36,14 @@ namespace ECommerceBackendSystem.API.Controllers
         /// <summary>
         /// Kullanıcının JWT token'ınını doğrular.
         /// </summary>
-        /// <param name="request">Kullanıcı token'ı</param>
+        /// <param name="token">Kullanıcı token'ı</param>
         [HttpGet("validate/{token}")]
         [ProducesResponseType(typeof(bool), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ServiceResponse), StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(typeof(ServiceResponse), StatusCodes.Status500InternalServerError)]
-        public IActionResult ValidateToken([FromRoute] ValidateTokenRequest request)
+        public IActionResult ValidateToken([FromRoute] string token)
         {
-            var response = this._tokenService.ValidateToken(request.Token);
+            var response = this._tokenService.ValidateToken(token);
 
             if (!response.IsSuccessful)
                 return Unauthorized(response);

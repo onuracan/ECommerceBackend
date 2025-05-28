@@ -1,4 +1,5 @@
 using AutoMapper;
+using ECommerceBackendSystem.API.Filters;
 using ECommerceBackendSystem.API.Models.Orders.Request;
 using ECommerceBackendSystem.Application.Abstractions.Dtos.Orders;
 using ECommerceBackendSystem.Application.Abstractions.Dtos.ServiceResponse;
@@ -23,14 +24,15 @@ namespace ECommerceBackendSystem.API.Controllers
         /// <summary>
         /// Kullanıcıya ait siparişleri getirir.
         /// </summary>
-        /// <param name="request">Kullanıcı ID'si</param>
+        /// <param name="userId">Kullanıcı ID'si</param>
         [HttpGet("{userId}")]
+        [ValidateGuid("userId")]
         [ProducesResponseType(typeof(ServiceResponse<IEnumerable<OrderDto>>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ServiceResponse), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ServiceResponse), StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> GetOrders([FromRoute] GetOrdersRequest request)
+        public async Task<IActionResult> GetOrders([FromRoute] string userId)
         {
-            var response = await this._orderQueryService.GetOrdersByUserIdAsync(Guid.Parse(request.UserId));
+            var response = await this._orderQueryService.GetOrdersByUserIdAsync(Guid.Parse(userId));
 
             if (!response.IsSuccessful)
                 return BadRequest(response);
